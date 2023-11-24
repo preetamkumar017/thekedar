@@ -29,7 +29,7 @@ class LoginModel {
 class Result {
   String? id;
   String? fullName;
-  String? workType;
+  String? thekaTypeId;
   String? assignSite;
   String? mobileNo;
   String? password;
@@ -37,12 +37,12 @@ class Result {
   String? status;
   String? createDate;
   String? updateDate;
-  String? ip;
+  Null? ip;
 
   Result(
       {this.id,
         this.fullName,
-        this.workType,
+        this.thekaTypeId,
         this.assignSite,
         this.mobileNo,
         this.password,
@@ -55,7 +55,7 @@ class Result {
   Result.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     fullName = json['full_name'];
-    workType = json['work_type'];
+    thekaTypeId = json['theka_type_id'];
     assignSite = json['assign_site'];
     mobileNo = json['mobile_no'];
     password = json['password'];
@@ -70,7 +70,7 @@ class Result {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     data['id'] = this.id;
     data['full_name'] = this.fullName;
-    data['work_type'] = this.workType;
+    data['theka_type_id'] = this.thekaTypeId;
     data['assign_site'] = this.assignSite;
     data['mobile_no'] = this.mobileNo;
     data['password'] = this.password;

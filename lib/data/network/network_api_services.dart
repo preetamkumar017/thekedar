@@ -52,6 +52,9 @@ class NetworkApiServices extends BaseApiServices {
       throw InternetException('');
     }on RequestTimeOut {
       throw RequestTimeOut('');
+    }catch(e)
+    {
+      log(e.toString()+"api");
     }
     return responseJson ;
   }
@@ -111,31 +114,31 @@ class NetworkApiServices extends BaseApiServices {
 
   }
 
-  Future getPostWithFormDataApiResponse(List<http.MultipartFile> file, data,String url) async {
+  @override
+  Future getPostWithFormDataApiResponse(String url, file, data) async {
     dynamic responseJson;
 
+    log("NetworkApiService: $data");
+    log("NetworkApiService: $url");
     try {
-      //debugPrint(url);
       var request = http.MultipartRequest("POST", Uri.parse(url));
-
-      // debugPrint(data.toString());
-      // debugPrint(file.length.toString());
       request.fields.addAll(data);
       request.files.addAll(file);
       var response = await request.send();
-      //debugPrint(response.statusCode);
-      var responseString = await response.stream.bytesToString();
-      //debugPrint(responseString);
-      responseJson = returnResponseFile(response, responseString);
-
-      // //debugPrint(responseJson.toString());
-
+      // print(response.toString());
+      var responseString = await response.stream.bytesToString().then((value){
+        responseJson = returnResponseFile(response, value);
+        log(responseJson);
+      });
     } on SocketException {
       throw FetchDataException('No Internet Connection');
+    }catch(e){
+      debugPrint(e.toString());
     }
-
+    print(responseJson.toString());
     return responseJson;
   }
+
 
   dynamic returnResponseFile(http.StreamedResponse response, responseString) {
     switch (response.statusCode) {

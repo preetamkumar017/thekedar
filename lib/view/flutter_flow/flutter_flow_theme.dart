@@ -54,30 +54,9 @@ abstract class FlutterFlowTheme {
   late Color error;
   late Color info;
 
-  late Color borderColor;
-  late Color iconColor;
-  late Color buttonColor;
-  late Color btnText;
-  late Color lineColor;
-  late Color customColor3;
-  late Color customColor4;
-  late Color white;
-  late Color background;
-  late Color borderSecondary;
-  late Color iconblueContainer;
-  late Color iconbluecolour;
-  late Color iconeditcontainer;
-  late Color iconeditcolour;
-  late Color iconContailnerMain;
-  late Color divider;
-  late Color iconbluecolour2;
-  late Color deletebtncontainer;
-  late Color boxShadowcolour;
-  late Color whitecontainer;
-  late Color iconcontainerdashboard;
-  late Color loginPageColour;
   late Color primaryBtnText;
-  late Color greencontainer;
+  late Color lineColor;
+  late Color highlightColour;
 
   @Deprecated('Use displaySmallFamily instead')
   String get title1Family => displaySmallFamily;
@@ -150,14 +129,14 @@ class LightModeTheme extends FlutterFlowTheme {
   @Deprecated('Use tertiary instead')
   Color get tertiaryColor => tertiary;
 
-  late Color primary = const Color(0xFFEEEEEE);
-  late Color secondary = const Color(0xFFECF7FD);
-  late Color tertiary = const Color(0xFFBAEFE3);
+  late Color primary = const Color(0xFF0097A7);
+  late Color secondary = const Color(0xFFB2EBF2);
+  late Color tertiary = const Color(0xFF00BCD4);
   late Color alternate = const Color(0xFFFFFFFF);
-  late Color primaryText = const Color(0xFF838B96);
-  late Color secondaryText = const Color(0xFF8C8F90);
-  late Color primaryBackground = const Color(0xFFF1F4F8);
-  late Color secondaryBackground = const Color(0xFFFFFFFF);
+  late Color primaryText = const Color(0xFF212121);
+  late Color secondaryText = const Color(0xFF757575);
+  late Color primaryBackground = const Color(0xFFFF4081);
+  late Color secondaryBackground = const Color(0xFFBDBDBD);
   late Color accent1 = const Color(0xFF616161);
   late Color accent2 = const Color(0xFF757575);
   late Color accent3 = const Color(0xFFE0E0E0);
@@ -167,30 +146,9 @@ class LightModeTheme extends FlutterFlowTheme {
   late Color error = const Color(0xFFE21C3D);
   late Color info = const Color(0xFF1C4494);
 
-  late Color borderColor = Color(0xFF6DA2C6);
-  late Color iconColor = Color(0xFFD0D0D0);
-  late Color buttonColor = Color(0xFF49ACF3);
-  late Color btnText = Color(0xFFFFFFFF);
-  late Color lineColor = Color(0xFFDBE2E7);
-  late Color customColor3 = Color(0xFFDF3F3F);
-  late Color customColor4 = Color(0xFF090F13);
-  late Color white = Color(0xFFFFFFFF);
-  late Color background = Color(0xFF1D2429);
-  late Color borderSecondary = Color(0xFFFFFFFF);
-  late Color iconblueContainer = Color(0xFFEBF7FD);
-  late Color iconbluecolour = Color(0xFF32A7E2);
-  late Color iconeditcontainer = Color(0xFFE9F8F2);
-  late Color iconeditcolour = Color(0xFF22B07D);
-  late Color iconContailnerMain = Color(0xFFFFFFFF);
-  late Color divider = Color(0xFFDADADA);
-  late Color iconbluecolour2 = Color(0xFF838B96);
-  late Color deletebtncontainer = Color(0xFFFFEBEB);
-  late Color boxShadowcolour = Color(0x33000000);
-  late Color whitecontainer = Color(0xFFFFFFFF);
-  late Color iconcontainerdashboard = Color(0xFFEEEEEE);
-  late Color loginPageColour = Color(0xFF49ACF3);
   late Color primaryBtnText = Color(0xFFFFFFFF);
-  late Color greencontainer = Color(0xFFE9F8F2);
+  late Color lineColor = Color(0xFFE0E3E7);
+  late Color highlightColour = Color(0xFF00BCD4);
 }
 
 abstract class Typography {
@@ -234,16 +192,16 @@ class ThemeTypography extends Typography {
   String get displayLargeFamily => 'Poppins';
   TextStyle get displayLarge => GoogleFonts.getFont(
     'Poppins',
-    color: theme.iconeditcolour,
-    fontWeight: FontWeight.normal,
-    fontSize: 11.0,
+    color: theme.highlightColour,
+    fontWeight: FontWeight.w600,
+    fontSize: 14.0,
   );
   String get displayMediumFamily => 'Poppins';
   TextStyle get displayMedium => GoogleFonts.getFont(
     'Poppins',
-    color: theme.iconeditcolour,
-    fontWeight: FontWeight.w600,
-    fontSize: 15.0,
+    color: theme.primaryText,
+    fontWeight: FontWeight.normal,
+    fontSize: 45.0,
   );
   String get displaySmallFamily => 'Poppins';
   TextStyle get displaySmall => GoogleFonts.getFont(
@@ -291,8 +249,8 @@ class ThemeTypography extends Typography {
   TextStyle get titleSmall => GoogleFonts.getFont(
     'Poppins',
     color: theme.secondaryText,
-    fontWeight: FontWeight.normal,
-    fontSize: 12.0,
+    fontWeight: FontWeight.w600,
+    fontSize: 16.0,
   );
   String get labelLargeFamily => 'Poppins';
   TextStyle get labelLarge => GoogleFonts.getFont(
@@ -304,7 +262,7 @@ class ThemeTypography extends Typography {
   String get labelMediumFamily => 'Poppins';
   TextStyle get labelMedium => GoogleFonts.getFont(
     'Poppins',
-    color: theme.primary,
+    color: theme.primaryText,
     fontWeight: FontWeight.w500,
     fontSize: 12.0,
   );
@@ -318,22 +276,23 @@ class ThemeTypography extends Typography {
   String get bodyLargeFamily => 'Poppins';
   TextStyle get bodyLarge => GoogleFonts.getFont(
     'Poppins',
-    color: theme.white,
-    fontSize: 14.0,
+    color: theme.primaryText,
+    fontWeight: FontWeight.normal,
+    fontSize: 16.0,
   );
   String get bodyMediumFamily => 'Poppins';
   TextStyle get bodyMedium => GoogleFonts.getFont(
     'Poppins',
     color: theme.primaryText,
-    fontWeight: FontWeight.w500,
-    fontSize: 12.0,
+    fontWeight: FontWeight.w600,
+    fontSize: 14.0,
   );
   String get bodySmallFamily => 'Poppins';
   TextStyle get bodySmall => GoogleFonts.getFont(
     'Poppins',
     color: theme.secondaryText,
-    fontWeight: FontWeight.normal,
-    fontSize: 10.0,
+    fontWeight: FontWeight.w600,
+    fontSize: 14.0,
   );
 }
 
@@ -347,11 +306,11 @@ class DarkModeTheme extends FlutterFlowTheme {
 
   late Color primary = const Color(0xFF4B39EF);
   late Color secondary = const Color(0xFF39D2C0);
-  late Color tertiary = const Color(0xFFEE8B60);
-  late Color alternate = const Color(0xFF282A2E);
+  late Color tertiary = const Color(0xFF395B64);
+  late Color alternate = const Color(0xFF2C3333);
   late Color primaryText = const Color(0xFFFFFFFF);
-  late Color secondaryText = const Color(0xFFDADADA);
-  late Color primaryBackground = const Color(0xFF454D55);
+  late Color secondaryText = const Color(0xFF95A1AC);
+  late Color primaryBackground = const Color(0xFF1A1F24);
   late Color secondaryBackground = const Color(0xFF101213);
   late Color accent1 = const Color(0xFFEEEEEE);
   late Color accent2 = const Color(0xFFE0E0E0);
@@ -362,30 +321,9 @@ class DarkModeTheme extends FlutterFlowTheme {
   late Color error = const Color(0xFFE21C3D);
   late Color info = const Color(0xFF1C4494);
 
-  late Color borderColor = Color(0xFF14BED9);
-  late Color iconColor = Color(0xFFD0D0D0);
-  late Color buttonColor = Color(0xFF3F6791);
-  late Color btnText = Color(0xFFFFFFFF);
-  late Color lineColor = Color(0xFF323B45);
-  late Color customColor3 = Color(0xFFDF3F3F);
-  late Color customColor4 = Color(0xFF090F13);
-  late Color white = Color(0xFFFFFFFF);
-  late Color background = Color(0xFF1D2429);
-  late Color borderSecondary = Color(0xFF772221);
-  late Color iconblueContainer = Color(0xFFEBF7FD);
-  late Color iconbluecolour = Color(0xFF32A7E2);
-  late Color iconeditcontainer = Color(0xFFE9F8F2);
-  late Color iconeditcolour = Color(0xFF22B07D);
-  late Color iconContailnerMain = Color(0xFFFFFFFF);
-  late Color divider = Color(0xFFFFFFFF);
-  late Color iconbluecolour2 = Color(0xFF32A7E7);
-  late Color deletebtncontainer = Color(0xFF447C7F);
-  late Color boxShadowcolour = Color(0x33000000);
-  late Color whitecontainer = Color(0xFF3F6791);
-  late Color iconcontainerdashboard = Color(0xFFFFFFFF);
-  late Color loginPageColour = Color(0xFF3F6791);
   late Color primaryBtnText = Color(0xFFFFFFFF);
-  late Color greencontainer = Color(0xFF7372B4);
+  late Color lineColor = Color(0xFF22282F);
+  late Color highlightColour = Color(0xFFA5C9CA);
 }
 
 extension TextStyleHelper on TextStyle {

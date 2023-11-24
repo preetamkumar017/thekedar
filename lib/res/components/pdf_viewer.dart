@@ -34,7 +34,7 @@ class _PDFScreenState extends State<PDFScreen> with WidgetsBindingObserver {
           elevation: 0, // Remove the elevation
           leading: IconButton(
             icon: Icon(Icons.arrow_back,
-                color: FlutterFlowTheme.of(context).iconColor
+                color: FlutterFlowTheme.of(context).primary
             ), // Set the back arrow color to black
             onPressed: () {
               Get.back();
@@ -81,7 +81,7 @@ class _PDFFileScreenState extends State<PDFFileScreen> with WidgetsBindingObserv
           elevation: 0, // Remove the elevation
           leading: IconButton(
             icon: Icon(Icons.arrow_back,
-                color: FlutterFlowTheme.of(context).iconColor
+                color: FlutterFlowTheme.of(context).primary
                     ), // Set the back arrow color to black
             onPressed: () {
               Get.back();

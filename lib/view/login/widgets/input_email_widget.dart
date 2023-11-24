@@ -16,17 +16,18 @@ class InputEmailWidget extends StatelessWidget {
     return  TextFormField(
       controller: loginVM.emailController.value,
       focusNode: loginVM.emailFocusNode.value,
-
+      keyboardType: TextInputType.number,
       validator: (value){
         if(value!.isEmpty){
-          Utils.snackBar('Email', 'Enter email');
+          Utils.snackBar('Mobile', 'Enter Mobile');
         }
       },
       onFieldSubmitted: (value){
         Utils.fieldFocusChange(context, loginVM.emailFocusNode.value, loginVM.passwordFocusNode.value);
       },
       decoration: InputDecoration(
-          hintText: 'email_hint'.tr,
+          hintText: "Mobile Number",
+          labelText: "Mobile Number",
           border: OutlineInputBorder()
       ),
     );
